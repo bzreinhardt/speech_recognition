@@ -1028,9 +1028,12 @@ class Recognizer(AudioSource):
             convert_width=None if audio_data.sample_width >= 2 else 2  # audio samples should be at least 16-bit
         )
         url = "https://stream.watsonplatform.net/speech-to-text/api/v1/recognize?{}".format(urlencode({
-            "profanity_filter": "false",
+           "profanity_filter": "false",
+            "word_confidence": "true",
+            "timestamps": "true",
+            "speaker_labels": "true",
             "continuous": "true",
-            "model": "{}_BroadbandModel".format(language),
+            "model": "{}_NarrowbandModel".format(language),
         }))
         request = Request(url, data=flac_data, headers={
             "Content-Type": "audio/x-flac",

@@ -1,3 +1,7 @@
+Notes from Ben: 
+Put a file called watson_credentials.json in speech_recongition root
+examples/test.py assumes there's a .wav file with multiple speakers at examples/MobileAppCall.wav
+
 SpeechRecognition
 =================
 
