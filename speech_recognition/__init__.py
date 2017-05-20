@@ -1034,6 +1034,7 @@ class Recognizer(AudioSource):
             "speaker_labels": "true",
             "continuous": "true",
             "model": "{}_NarrowbandModel".format(language),
+            "inactivity_timeout":-1,
         }))
         request = Request(url, data=flac_data, headers={
             "Content-Type": "audio/x-flac",
